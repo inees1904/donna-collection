@@ -1,0 +1,197 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="User.master.cs" Inherits="pap.User.User" %>
+
+<!DOCTYPE html>
+
+<html>
+    <head runat="server">
+        <meta charset="utf-8">
+        <title>Donna Collection</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="../UserTemplate/img/icon.ico">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+        <link href="../UserTemplate/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <link href="../UserTemplate/css/style.css" rel="stylesheet">
+
+        <style>
+            body{background-color: #f3d5d3;}
+            .col-lg-9{background-color: #f3d5d3;}
+            .bg-light{background-color: #f3d5d3;}
+            .border-top{background-color: #f3d5d3;}
+            .navbar{background-color: rgba(0,0,0,0); justify-content: center; color: black; position: relative; display: flex; align-items: center;}
+            .img-align{display: inline-block; vertical-align: middle;}
+            .navbar-toggler{margin: 0px 40px 0px 0px;}
+            .container-fluid{background-color: transparent;}
+            .btn{align-self: center;}
+            .dropdown-menu{background-color: #f3d5d3; border: 0px; align-items: center;}
+            .dropdown-menu a:hover{background-color: #d49c94;}
+            .navbar-nav{justify-content: center; align-items: center; display: flex; width: 100%; margin: 0 auto;}
+            .navbar-nav .nav-item{margin-right: 15px;}
+            .navbar-nav .nav-item:last-child{margin-right: 0;}
+            .navbar-nav .navbar-brand {margin-left: 15px;margin-right: 15px;}
+            @media (max-width: 991.98px) {
+                .navbar-nav {
+                    flex-direction: column;
+                }
+                .navbar-brand {
+                    margin-left: 0;
+                    margin-right: 0;
+                    order: -1; 
+                }
+            }
+        </style>
+
+        <script>
+            $(function () {
+                var url = window.location.href;
+                $("#navbarCollapse a").each(function () {
+                    if (url == (this.href)) {
+                        $(this).addClass("active");
+                    }
+                });
+            });
+        </script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+        <asp:ContentPlaceHolder ID="head" runat="server">
+        </asp:ContentPlaceHolder>
+    </head>
+    <body>
+        <form id="form1" runat="server">
+            <%
+                string navClass = string.Empty;
+                if (Request.Url.IsAbsoluteUri.ToString().Contains("Default.aspx"))
+                {
+                    navClass = "show";
+                }
+                else
+                {
+                    navClass = "position-absolute";
+                }
+            %>
+
+            <asp:ScriptManager runat="server" ID="ScriptManager1"></asp:ScriptManager>
+
+            <div class="container-fluid mb-5">
+                    <nav class="navbar navbar-expand-lg navbar-light py-3 py-lg-0 px-0">
+                        <button type="button" class="navbar-toggler ml-auto" data-toggle="collapse" data-target="#navbarCollapse">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <a href="../User/Default.aspx" class="text-decoration-none navbar-brand d-lg-none">
+                            <img src="../UserTemplate/img/letras.jpg" style="width: 200px; height: 100px;" class="img-fluid img-align" />
+                        </a>
+                        <div class="collapse navbar-collapse text-center justify-content-center" id="navbarCollapse">
+                            <div class="navbar-nav mr-auto py-0">
+                                <div class="nav-item dropdown">
+                                    <a href="../User/Roupa.aspx" class="nav-item nav-link">Roupa</a>
+                                </div>
+                                <a href="Acessorios.aspx" class="nav-item nav-link">Acessórios</a>
+                                <a href="Calcado.aspx" class="nav-item nav-link">Calçado</a>
+                                <div class="dropdown">
+                                    <a href="#" class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">
+                                        Informações <i class="fa fa-angle-down float-right mt-1"></i>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="Contact.aspx">Sobre Nós</a>
+                                        <a class="dropdown-item" href="TermosCondicoes.aspx">Termos e Condições</a>
+                                        <a class="dropdown-item" href="Metodos.aspx">Métodos de Pagamento e Envio</a>
+                                    </div>
+                                </div>                   
+                            </div>
+                            <a href="../User/Default.aspx" class="text-decoration-none navbar-brand d-none d-lg-inline-block">
+                                <img src="../UserTemplate/img/letras.jpg" style="width: 500px; height: 100px; margin-top: 10px;" class="img-fluid img-align"/>
+                            </a>
+                            <div class="navbar-nav ml-auto py-0">
+                                <% int totalItensCarrinho = GetTotalItensCarrinho(); %>
+                                <% int totalItensWishList = GetTotalItensWishlist(); %>
+                                <a href="Wishlist.aspx" class="btn">
+                                    <i class="fas fa-heart text-primary"></i>
+                                    <span class="badge"><%= totalItensWishList %></span>
+                                </a>
+                                <a href="Cart.aspx" class="btn">
+                                    <i class="fas fa-shopping-cart text-primary"></i>
+                                    <span class="badge"><%= totalItensCarrinho %></span>
+                                </a>
+                                <% if (Session["nome"] != null) { %>
+                                    <a href="UserDetails.aspx" class="nav-item nav-link">
+                                        <i class="fas fa-user" style="color: #d49c94;"></i>
+                                        <asp:Label runat="server" ID="userLabel"><%= Session["nome"] %></asp:Label>
+                                    </a>
+                                    <a class="nav-item nav-link" href="Logout.aspx">Logout</a>
+                                <% } else { %>
+                                    <a href="Login.aspx" class="nav-item nav-link">
+                                        <i class="fas fa-user" style="color: #d49c94;"></i> 
+                                    </a>
+                                <% } %>
+                            </div>
+                        </div>
+                    </nav>
+                
+                    <asp:Panel ID="pnlSliderUC" runat="server"></asp:Panel>
+
+                </div>
+
+            <div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>  
+
+        <div class="container-fluid text-dark mt-5 pt-5">
+            <div class="row px-xl-5 pt-5">
+                <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
+                    <a href="~" class="text-decoration-none">
+                        <img src="../UserTemplate/img/i.png" style="width: 70px; height: 70px;" />
+                    </a>
+                    <p>Venha visitar a nossa loja:</p>
+                    <p class="mb-2"><a class="text-dark" target="_blank" href="https://www.google.com/maps/place/DONNA+COLLECTION/@41.5469631,-8.4327652,17z/data=!3m1!4b1!4m6!3m5!1s0xd24fff2a99d7c5d:0xb0c8b84a7bf809d6!8m2!3d41.5469631!4d-8.4327652!16s%2Fg%2F11s87tmcmt?entry=ttu">
+                        <i class="fa fa-map-marker-alt text-primary mr-3"></i>Rua Cruz de Pedra, 118, 4700-219 Braga
+                        </a></p>
+                
+                    <a class="text-dark" href="mailto:donnacollection21@gmail.com" target="_blank"><p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>donnacollection21@gmail.com</p></a>
+                    <a class="text-dark" href="tel:+351910276923"><p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>910 276 923</p></a>
+                    <a href="https://www.facebook.com/DONNA.COLLETION/" target="_blank"><i class="fab fa-facebook"></i></a>&nbsp
+                    <a href="https://wa.me/910276923" target="_blank"><i class="fab fa-whatsapp"></i></a>&nbsp
+                    <a href="https://www.instagram.com/_donna.colletion_/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@donna.colletion?is_from_webapp=1&sender_device=pc" target="_blank"><i class="bi bi-tiktok"></i></a>
+                </div>
+                <div class="col-lg-8 col-md-12">
+                    <div class="row">
+                        <div class="col-md-4 mb-5 ml-auto">
+                            <h5 class="font-weight-bold text-dark mb-4">Links</h5>
+                            <div class="d-flex flex-column justify-content-start">
+                                <a class="text-dark mb-2" href="Default.aspx"><i class="fa fa-angle-right mr-2"></i>Início</a>
+                                <a class="text-dark mb-2" href="shop.html"><i class="fa fa-angle-right mr-2"></i>Roupa</a>
+                                <a class="text-dark mb-2" href="detail.html"><i class="fa fa-angle-right mr-2"></i>Acessórios</a>
+                                <a class="text-dark mb-2" href="cart.html"><i class="fa fa-angle-right mr-2"></i>Calçado</a>
+                                <a class="text-dark mb-2" href="Contact.aspx"><i class="fa fa-angle-right mr-2"></i>Sobre nós</a>
+                                <a class="text-dark mb-2" href="https://www.livroreclamacoes.pt/INICIO/" target="_blank">
+                                    <img src="../UserTemplate/img/livro_reclamacoes-500x-207-b.png" style="width: 150px; height: 70px;" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row border-top border-dark mx-xl-5 py-4">
+                <div class="col-md-6 px-xl-0">
+                    <p class="mb-md-0 text-center text-md-left text-dark">
+                        &copy; <a class="text-dark font-weight-semi-bold" href="../User/Default.aspx">Donna Collection</a>, 2024
+                    </p>
+                </div>
+            </div>
+        </div>
+        </form>
+        <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="../UserTemplate/lib/easing/easing.min.js"></script>
+        <script src="../UserTemplate/lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="../UserTemplate/mail/jqBootstrapValidation.min.js"></script>
+        <script src="../UserTemplate/mail/contact.js"></script>
+        <script src="../UserTemplate/js/main.js"></script>
+    </body>
+</html>

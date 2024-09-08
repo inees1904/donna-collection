@@ -20,18 +20,18 @@ jobs:
 
       - name: Restore dependencies
         run: dotnet restore
-        working-directory: ./YourProjectName
+        working-directory: ./pap
 
       - name: Build
         run: dotnet build --configuration Release --no-restore
-        working-directory: ./YourProjectName
+        working-directory: ./pap
 
       - name: Publish
         run: dotnet publish -c Release -o ./output
-        working-directory: ./YourProjectName
+        working-directory: ./pap
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./YourProjectName/output
+          publish_dir: ./pap/output

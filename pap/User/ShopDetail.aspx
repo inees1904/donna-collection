@@ -52,6 +52,7 @@
                             <p class="text-dark font-weight-medium mb-0 mr-3">Tamanhos:</p>
                             <asp:RadioButtonList ID="rblSizes" runat="server" RepeatDirection="Horizontal">
                             </asp:RadioButtonList>
+                            <a href="#" id="sizeGuideLink" class="ml-2" onclick="openSizeGuide()">Guia de Tamanhos</a>
                         </div>
                         <div class="d-flex mb-4">
                             <p class="text-dark font-weight-medium mb-0 mr-3">Cores:</p>
@@ -92,4 +93,27 @@
             </div>
         </ItemTemplate>
     </asp:Repeater>
+    <div id="sizeGuideModal" class="modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.5); justify-content:center; align-items:center;">
+        <div class="modal-content" style="position:relative; padding:20px; width:90%; max-width:600px; background-color:white; border-radius:8px; box-shadow:0px 4px 8px rgba(0, 0, 0, 0.2);">
+            <span class="close" onclick="closeSizeGuide()" style="position:absolute; top:10px; right:20px; font-size:24px; cursor:pointer;">&times;</span>
+            <img src="../UserTemplate/img/Guia de Tamanhos Donna Collection.png" alt="Guia de Tamanhos" style="width:100%; height:auto; object-fit:contain;">
+        </div>
+    </div>
+
+    <script>
+        function openSizeGuide() {
+            document.getElementById("sizeGuideModal").style.display = "flex";
+        }
+
+        function closeSizeGuide() {
+            document.getElementById("sizeGuideModal").style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            var modal = document.getElementById("sizeGuideModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </asp:Content>

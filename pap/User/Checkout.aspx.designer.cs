@@ -204,6 +204,15 @@ namespace pap.User
         protected global::System.Web.UI.WebControls.RadioButton rbMbWay;
 
         /// <summary>
+        /// rbTransferencia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rbTransferencia;
+
+        /// <summary>
         /// btnFinalizar control.
         /// </summary>
         /// <remarks>

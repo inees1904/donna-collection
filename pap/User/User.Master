@@ -9,7 +9,7 @@
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <link rel="icon" type="image/png" sizes="16x16" href="../UserTemplate/img/icon.ico">
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="../UserTemplate/fonts/futurastd-light.otf" />
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
         <link href="../UserTemplate/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
@@ -86,25 +86,38 @@
                         <div class="collapse navbar-collapse text-center justify-content-center" id="navbarCollapse">
                             <div class="navbar-nav mr-auto py-0">
                                 <div class="nav-item dropdown">
-                                    <a href="../User/Roupa.aspx" class="nav-item nav-link">Roupa</a>
+                                    <a href="Contact.aspx" class="nav-item nav-link">SOBRE NÓS</a>
                                 </div>
-                                <a href="Acessorios.aspx" class="nav-item nav-link">Acessórios</a>
-                                <a href="Calcado.aspx" class="nav-item nav-link">Calçado</a>
-                                <div class="dropdown">
-                                    <a href="#" class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">
-                                        Informações <i class="fa fa-angle-down float-right mt-1"></i>
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="Contact.aspx">Sobre Nós</a>
-                                        <a class="dropdown-item" href="TermosCondicoes.aspx">Termos e Condições</a>
-                                        <a class="dropdown-item" href="Metodos.aspx">Métodos de Pagamento e Envio</a>
-                                    </div>
-                                </div>                   
+                                <div class="nav-item dropdown">
+                                    <a href="../User/Roupa.aspx" class="nav-item nav-link">ROUPA</a>
+                                </div>
+                                <a href="Acessorios.aspx" class="nav-item nav-link">ACESSÓRIOS</a>
+                                <a href="Calcado.aspx" class="nav-item nav-link">CALÇADO</a>
+                                                 
                             </div>
                             <a href="../User/Default.aspx" class="text-decoration-none navbar-brand d-none d-lg-inline-block">
                                 <img src="../UserTemplate/img/letras.jpg" style="width: 500px; height: 100px; margin-top: 10px;" class="img-fluid img-align"/>
                             </a>
                             <div class="navbar-nav ml-auto py-0">
+                                <div class="nav-item dropdown">
+                                    <a href="../User/Roupa.aspx" class="nav-item nav-link">GIFT CARD</a>
+                                </div>
+                                <div class="dropdown">
+                                    <a href="#" class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">
+                                        INFORMAÇÕES <i class="fa fa-angle-down float-right mt-1"></i>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="Informacoes.aspx">INFORMAÇÕES</a>
+                                        <a class="dropdown-item" href="TermosCondicoes.aspx">TERMOS E CONDIÇÕES</a>
+                                        <a class="dropdown-item" href="Metodos.aspx">MÉTODOS DE PAGAMENTO</a>
+                                    </div>
+                                </div>  
+                                <div class="nav-item dropdown">
+                                    <a href="~" class="nav-item nav-link"></a>
+                                </div> 
+                                <div class="nav-item dropdown">
+                                    <a href="~" class="nav-item nav-link"></a>
+                                </div>    
                                 <% int totalItensCarrinho = GetTotalItensCarrinho(); %>
                                 <% int totalItensWishList = GetTotalItensWishlist(); %>
                                 <a href="Wishlist.aspx" class="btn">

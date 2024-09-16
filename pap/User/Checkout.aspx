@@ -171,10 +171,10 @@
                             <asp:RadioButton runat="server" AutoPostBack="true" GroupName="payment" ID="rbMbWay" />
                             <label for="rbMbWay">MBWay</label>
                         </div>
-<%--                        <div class="">
+                        <div class="">
                             <asp:RadioButton runat="server" AutoPostBack="true" GroupName="payment" ID="rbTransferencia" />
                             <label for="rbTransferencia">Transferência Bancária</label>
-                        </div>--%>
+                        </div>
                     </div>
                     <div class="card-footer border-secondary bg-transparent">
                         <asp:Button runat="server" ID="btnFinalizar" Text="Finalizar Pedido" CssClass="btn btn-lg btn-block btn-primary font-weight-bold my-3 py-3" OnClick="btnFinalizar_Click" UseSubmitBehavior="false" />

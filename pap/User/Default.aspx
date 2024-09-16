@@ -112,7 +112,7 @@
             <div class="col-md-4 col-12 text-center mb-4">
                 <h2 class="section-title px-5 mb-3"><span style="background-color: #f3d5d3; padding: 10px;">Instagram</span></h2>
                 <div class="instagram-embed" style="width: 340px; margin: 0 auto;">
-                    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/_donna.colletion_/" data-instgrm-version="13" style="height:500px; width: 340px; overflow:hidden; border: none;"></blockquote>
+                    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/_donna.colletion_/" data-instgrm-version="13" style="height:450px; width: 340px; overflow:hidden; border: none;"></blockquote>
                     <script async src="https://www.instagram.com/embed.js"></script>
                 </div>
             </div>

@@ -792,6 +792,7 @@
     <Content Include="UserTemplate\img\Captura de ecrã 2024-09-04 115935.png" />
     <Content Include="UserTemplate\img\carrosel2.jpg" />
     <Content Include="UserTemplate\img\carrossel1.jpg" />
+    <Content Include="UserTemplate\img\Guia de Tamanhos Donna Collection.png" />
     <Content Include="UserTemplate\img\i.png" />
     <Content Include="UserTemplate\img\iconeee.jpg" />
     <Content Include="UserTemplate\img\icon.ico" />
@@ -856,6 +857,7 @@
     <Content Include="User\Contact.aspx" />
     <Content Include="User\Default.aspx" />
     <Content Include="User\EditProfile.aspx" />
+    <Content Include="User\Informacoes.aspx" />
     <Content Include="User\Login.aspx" />
     <Content Include="User\Logout.aspx" />
     <Content Include="User\Metodos.aspx" />
@@ -993,6 +995,13 @@
     </Compile>
     <Compile Include="User\EditProfile.aspx.designer.cs">
       <DependentUpon>EditProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Informacoes.aspx.cs">
+      <DependentUpon>Informacoes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Informacoes.aspx.designer.cs">
+      <DependentUpon>Informacoes.aspx</DependentUpon>
     </Compile>
     <Compile Include="User\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -1479,6 +1488,7 @@
     <Content Include="UserTemplate\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
     <Content Include="UserTemplate\vendor\bootstrap\css\bootstrap.css.map" />
     <Content Include="UserTemplate\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="UserTemplate\fonts\futurastd-light.otf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

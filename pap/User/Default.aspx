@@ -26,19 +26,46 @@
         }
 
         .btn-custom:hover {
-            background-color: #000;
-            color: #fff;
+            background-color: #f3d5d3;
+            color: #000;
+        }
+
+        .carousel-control-prev-icon, .carousel-control-next-icon {
+            background-color: transparent !important; 
+            background-image: none !important; 
+            border: none; 
+        }
+
+        .carousel-control-prev-icon::before {
+            content: '\276E'; 
+            font-size: 24px; 
+            color: white; 
+        }
+
+        .carousel-control-next-icon::before {
+            content: '\276F'; 
+            font-size: 24px; 
+            color: white; 
+        }
+
+        .carousel-control-prev, .carousel-control-next {
+            background-color: transparent !important; 
+            border: none !important; 
+        }
+
+        .carousel-control-prev, .carousel-control-next {
+            width: 30px; 
         }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div id="header-carousel" class="carousel slide" data-ride="carousel">
+    <div id="header-carousel" class="carousel slide" data-ride="carousel" data-interval="2000">
     <div class="carousel-inner">
         <div class="carousel-item active">
             <img class="img-fluid" src="../UserTemplate/img/imagem1.jpg" alt="Image">
                 <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                             <h3 class="display-4 text-white font-weight-semi-bold mb-4">A Nossa Coleção</h3>
-                            <a href="Roupa.aspx" class="btn btn-light py-2 px-3" style="color: black;">Comprar agora</a>
+                            <a href="Roupa.aspx" class="btn btn-custom" style="color: black;">Comprar agora</a>
                 </div>
         </div>
         <div class="carousel-item">
@@ -60,12 +87,12 @@
         </div>
     </div>
     <a class="carousel-control-prev" href="#header-carousel" data-slide="prev">
-        <div class="btn btn-dark" style="width: 45px; height: 45px;">
+        <div class="btn" style="width: 45px; height: 45px;">
             <span class="carousel-control-prev-icon mb-n2"></span>
         </div>
     </a>
     <a class="carousel-control-next" href="#header-carousel" data-slide="next">
-        <div class="btn btn-dark" style="width: 45px; height: 45px;">
+        <div class="btn" style="width: 45px; height: 45px;">
             <span class="carousel-control-next-icon mb-n2"></span>
         </div>
     </a>

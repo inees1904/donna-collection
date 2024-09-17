@@ -42,6 +42,24 @@ namespace pap.User
         protected global::System.Web.UI.ScriptManager ScriptManager1;
 
         /// <summary>
+        /// searchInput control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox searchInput;
+
+        /// <summary>
+        /// btnPesquisar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnPesquisar;
+
+        /// <summary>
         /// userLabel control.
         /// </summary>
         /// <remarks>

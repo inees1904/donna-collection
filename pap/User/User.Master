@@ -117,6 +117,45 @@
                     font-size: 20px;
                 }
             }
+
+            #searchIcon {
+                font-size: 1.5rem; 
+                cursor: pointer;
+                line-height: 1;
+                display: flex;
+                align-items: center;
+            }
+
+            .search-box {
+                position: static;
+                width: 100%; 
+                margin-top: 10px; 
+            }
+
+            .search-box input {
+                width: 100%;
+            }
+
+            .search-box .btn {
+                width: 100%;
+            }
+
+            .search-box .form-control {
+                width: 100%;
+                margin-right: 0px;
+            }
+
+            .search-box-closed {
+                display: none;
+            }
+
+            @media (max-width: 768px) {
+                .search-box {
+                    right: 10px;
+                    top: 60px;
+                    width: 200px;
+                }
+            }
         </style>
 
         <script>
@@ -133,6 +172,16 @@
                 const socialFloat = document.querySelector('.social-float');
                 socialFloat.classList.toggle('show');
             }
+        </script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#searchIcon').on('click', function (e) {
+                    e.preventDefault();
+                    $('#searchBox').slideToggle();
+                    $('#searchInput').focus();
+                });
+            });
         </script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
@@ -200,6 +249,13 @@
                                 </div>    
                                 <% int totalItensCarrinho = GetTotalItensCarrinho(); %>
                                 <% int totalItensWishList = GetTotalItensWishlist(); %>
+                                <a href="#" id="searchIcon" class="nav-item nav-link">
+                                    <i class="fas fa-search" style="color: #d49c94;"></i>
+                                </a>
+                                <div id="searchBox" class="search-box search-box-closed">
+                                    <asp:TextBox ID="searchInput" runat="server" CssClass="form-control" placeholder="Pesquisar produtos"></asp:TextBox>
+                                    <asp:Button ID="btnPesquisar" runat="server" Text="Pesquisar" CssClass="btn btn-primary" style="margin-top: 10px;" />
+                                </div>
                                 <a href="Wishlist.aspx" class="btn">
                                     <i class="fas fa-heart text-primary"></i>
                                     <span class="badge"><%= totalItensWishList %></span>

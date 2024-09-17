@@ -1,26 +1,62 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/User/User.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="pap.User.Default" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style>
+        .carousel-item {
+            height: 100vh;
+            max-height: 700px;
+        }
+
+        .carousel-item img, .carousel-item video {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+        .carousel-caption {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .btn-custom {
+            background-color: #fff;
+            color: #000;
+            border-radius: 30px;
+            padding: 10px 20px;
+        }
+
+        .btn-custom:hover {
+            background-color: #000;
+            color: #fff;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="header-carousel" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
-        <div class="carousel-item active" style="height: 410px;">
+        <div class="carousel-item active">
             <img class="img-fluid" src="../UserTemplate/img/imagem1.jpg" alt="Image">
                 <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                    <div class="p-3" style="max-width: 700px;">
                             <h3 class="display-4 text-white font-weight-semi-bold mb-4">A Nossa Coleção</h3>
-                                <a href="Roupa.aspx" class="btn btn-light py-2 px-3" style="color: black;">Comprar agora</a>
-                    </div>
+                            <a href="Roupa.aspx" class="btn btn-light py-2 px-3" style="color: black;">Comprar agora</a>
                 </div>
         </div>
-        <div class="carousel-item" style="height: 410px;">
+        <div class="carousel-item">
+            <video class="img-fluid" autoplay loop muted>
+                <source src="../UserTemplate/videos/video1.mp4" type="video/mp4">
+                Seu navegador não suporta o vídeo.
+            </video>
+            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                <h3 class="display-4 text-white font-weight-semi-bold mb-4">Explorar Acessórios</h3>
+                <a href="Acessorios.aspx" class="btn btn-custom">Comprar agora</a>
+            </div>
+        </div>
+        <div class="carousel-item">
             <img class="img-fluid" src="../UserTemplate/img/449691363_18013544558419397_6084123901506776646_n.jpg" alt="Image">
-                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                    <div class="p-3" style="max-width: 700px;">
-                            <h3 class="display-4 text-white font-weight-semi-bold mb-4">Gama de Acessórios</h3>
-                                <a href="Acessorios.aspx" class="btn btn-light py-2 px-3">Comprar agora</a>
-                    </div>
-                </div>
+            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                <h3 class="display-4 text-white font-weight-semi-bold mb-4">Gama de Acessórios</h3>
+                <a href="Acessorios.aspx" class="btn btn-custom">Comprar agora</a>
+            </div>
         </div>
     </div>
     <a class="carousel-control-prev" href="#header-carousel" data-slide="prev">
